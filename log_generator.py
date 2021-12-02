@@ -1,9 +1,7 @@
 import logging
 from pathlib import Path
 import os
-
-
-workflow_name = "PhilipsVuePacsImageVeiwer"
+import data
 
 
 def generate_log(log_folder_name):
@@ -13,7 +11,7 @@ def generate_log(log_folder_name):
     log_folder_absolute_path = Path(os.getcwd()) / log_folder_name
     if not os.path.exists(log_folder_absolute_path):
         os.mkdir(log_folder_absolute_path)
-    log_file_name = workflow_name + ".log"
+    log_file_name = data.workflow_name + ".log"
     log_file_absolute_path = Path(log_folder_absolute_path) / log_file_name
     print("Log file Absolute Path : ", log_file_absolute_path)
     with open(log_file_absolute_path, "w") as LOG_FILE:
