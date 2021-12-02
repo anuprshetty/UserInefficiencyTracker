@@ -10,7 +10,7 @@ for user_id in range(1, data.users_count+1):
         next_step = random.randint(current_step+1, end_step)
         step_time_in_ms = random.randint(data.min_step_time_in_ms, data.max_step_time_in_ms)
 
-        log_message = f"user_{user_id},button_{current_step},button_{next_step},{step_time_in_ms}ms"
+        log_message = f"user_{user_id},{data.event_mapping[current_step]},{data.event_mapping[next_step]},{step_time_in_ms}ms"
         logger_obj.info(log_message)
 
         wait_time_in_ms = random.randint(data.min_wait_time_in_ms, data.max_wait_time_in_ms)
