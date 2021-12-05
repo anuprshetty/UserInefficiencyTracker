@@ -12,15 +12,15 @@ To know the structure of log file, please see UserActivity.log file on root dire
 
 ### **Sample output for the above log file UserActivity.log:**
 
-Inefficient Users:
+Inefficient Users:  
 
-User: user_2
-Total time taken: 563ms
-Followed path:
-Philips Home Page --> Componsation Viewer --> View My Benefits --> Advance Salary Viewer --> Tax Calculator --> Financial Year --> Payslips Viewer --> Payslips Download
+User: user_2  
+Total time taken: 563ms  
+Followed path:  
+Philips Home Page --> Componsation Viewer --> View My Benefits --> Advance Salary Viewer --> Tax Calculator --> Financial Year --> Payslips Viewer --> Payslips Download  
 
-Efficient Users:
+Efficient Users:  
 
-User: user_4
-Total time taken: 124ms
-Philips Home Page --> View My Pay --> Tax Calculator --> Payslips Download
+User: user_4  
+Total time taken: 124ms  
+Philips Home Page --> View My Pay --> Tax Calculator --> Payslips Download  
