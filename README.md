@@ -9,7 +9,9 @@ This application is used to know the efficient and inefficient users for the giv
 3. Run index.py file to generate user activity log in Logs folder.
 To know the structure of log file, please see UserActivity.log file on root directory.
 4. Run efficient_user_finder.py to know inefficent and efficient users for the Payslip download workflow.  
-**Sample output for the above log file UserActivity.log:**  
+
+### **Sample output for the above log file UserActivity.log:**
+
 Inefficient Users:
 
 User: user_2
