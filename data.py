@@ -30,3 +30,8 @@ event_mapping = {
     19: "Payslips Viewer",
     20: "Payslips Download",
 }
+
+user_id_field_index = 2
+current_step_field_index = 3
+next_step_field_index = 4
+step_time_field_index = 5
