@@ -5,7 +5,7 @@ max_step_time_in_ms = 100
 min_wait_time_in_ms = 500
 max_wait_time_in_ms = 2000
 
-workflow_name = "PhilipsVuePacsImageVeiwer"
+workflow_name = "UserActivity"
 
 event_mapping = {
     0: "Philips Home Page",
