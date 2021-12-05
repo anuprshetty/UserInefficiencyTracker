@@ -21,19 +21,19 @@ total_time_key = "TOTAL TIME"
 
 for log_row in log_rows:
     user_id = log_row[data.user_id_field_index]
-    if user_id in user_activity_mapping:
-        next_step = log_row[data.next_step_field_index]
-        step_time = log_row[data.step_time_field_index]
-        step_info = {current_step_key: next_step, step_time_key: step_time}
-        user_activity_mapping[user_id][steps_info_key].append(step_info)
-        user_activity_mapping[user_id][total_time_key] += int(step_time[:-2])
-    else:
+    if user_id not in user_activity_mapping:
         current_step = log_row[data.current_step_field_index]
         step_time = "0ms"
         step_info = {current_step_key: current_step, step_time_key: step_time}
         user_activity_mapping[user_id] = {}
         user_activity_mapping[user_id][steps_info_key] = [step_info]
         user_activity_mapping[user_id][total_time_key] = int(step_time[:-2])
+
+    next_step = log_row[data.next_step_field_index]
+    step_time = log_row[data.step_time_field_index]
+    step_info = {current_step_key: next_step, step_time_key: step_time}
+    user_activity_mapping[user_id][steps_info_key].append(step_info)
+    user_activity_mapping[user_id][total_time_key] += int(step_time[:-2])
 
 all_total_times = [user_info[total_time_key] for user_info in user_activity_mapping.values()]
 min_total_time = min(all_total_times)
