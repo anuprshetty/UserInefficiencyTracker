@@ -35,17 +35,17 @@ for log_row in log_rows:
     user_activity_mapping[user_id][steps_info_key].append(step_info)
     user_activity_mapping[user_id][total_time_key] += int(step_time[:-2])
 
-all_total_times = [user_info[total_time_key] for user_info in user_activity_mapping.values()]
-min_total_time = min(all_total_times)
-max_total_time = max(all_total_times)
+all_total_steps = [len(user_info[steps_info_key]) for user_info in user_activity_mapping.values()]
+min_total_steps = min(all_total_steps)
+max_total_steps = max(all_total_steps)
 
-efficient_user_ids = [user_id for user_id, user_info in user_activity_mapping.items() if user_info[total_time_key] == min_total_time]
+efficient_user_ids = [user_id for user_id, user_info in user_activity_mapping.items() if len(user_info[steps_info_key]) == min_total_steps]
 
-inefficient_user_ids = [user_id for user_id, user_info in user_activity_mapping.items() if user_info[total_time_key] == max_total_time]
+inefficient_user_ids = [user_id for user_id, user_info in user_activity_mapping.items() if len(user_info[steps_info_key]) == max_total_steps]
 
 def display_user_info(user_id):
     print(f"User: {user_id}")
-    print(f"Total time taken: {user_activity_mapping[user_id][total_time_key]}ms")
+    print(f"Total steps taken: {len(user_activity_mapping[user_id][steps_info_key])}")
     print("Followed path:")
     steps_info = user_activity_mapping[user_id][steps_info_key]
     for index, step_info in enumerate(steps_info):
